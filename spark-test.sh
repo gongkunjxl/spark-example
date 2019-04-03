@@ -25,6 +25,7 @@ function timediff() {
     echo $time
 }
 starttime=$(date +%s)
-$SPARK_HOME/bin/spark-submit --master spark://master.gongkun.com:7077 --class org.apache.spark.examples.mllib.JavaSVMWithSGDExample --executor-memory 512m ./target/JavaSVMWithSGDExample-project-1.0.jar
+#$SPARK_HOME/bin/spark-submit --master spark://master.gongkun.com:7077 --class org.apache.spark.examples.mllib.JavaSVMWithSGDExample --executor-memory 512m ./target/JavaSVMWithSGDExample-project-1.0.jar
+$SPARK_HOME/bin/spark-submit --master spark://master.gongkun.com:7077 --class org.apache.spark.examples.JavaPageRank --executor-memory 512m ./target/JavaPageRank-project-1.0.jar ./data.txt 1000
 endtime=$(date +%s)
 timediff $starttime $endtime
